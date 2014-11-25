@@ -1,0 +1,27 @@
+Author: Michael Dorman
+HW2 Deliverable
+May 7, 2013
+
+Building and Running
+The code can be compiled and run with the following instructions using Scala version 2.9.x.
+
+cd to the cspp51050 directory with the source files and execute:
+	scalac *.scala
+
+After compilation in the same directory as the source files execute the following:
+	scala cspp51050.Main -classpath cspp51050
+
+	
+Design Decisions: 
+My HW2 implementation of the pipe/filter architectural pattern is designed so that the flow
+of data can be controlled from either side of the pipe. So the data can be pushed through
+the pipe or the data can be pulled from the other side of the pipe. 
+
+I used generics throughout the filter and pipe traits so that the data types that can be
+sent through the pipe depend on the implementation. The HW2 problem required the manipulation
+of strings so the pipe & filters are parameterized with the String type. 
+
+Another important design choice was the use of the Scala Option object. By using this the 
+output of the pipe will always produce some output and it eliminates the problems associated
+with using null. If there is no data present in the pipe then the output of the pipe will
+be the None object so a process at the end of the pipe will need to handle this situation.

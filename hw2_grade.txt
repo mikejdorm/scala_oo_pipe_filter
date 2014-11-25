@@ -1,0 +1,13 @@
+Cool, I really like your design. Here's a question, though: how standardized are
+the inputs and outputs of your filters? If we were to write another filter
+called "DoubleFilter" that doubled each character in the strings passed to it,
+would it be as simple as adding a new pipe between your pipe and pipe2 variables
+that was assigned to new Pipe(caps, double), and then, changing the next pipe's
+first argument to double? I'd assume so, so long as the double filter understood
+that the input type was "string," which they should be abel to rightly assume.
+
+Nice work.
+
+4/4
+
+Sean
